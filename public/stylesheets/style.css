@@ -1,8 +1,83 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  height: 100vh;
+  /* display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main" */
+}
+
+body>nav {
+  grid-area: nav;
+  background-color: #2916b8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav>img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+  color: #424748;
+}
+
+nav>a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+nav>a:hover:not(.active) {
+  color: white;
+  background-color: #467d40;
+}
+
+nav>a.active {
+  color: white;
+  cursor: default;
+}
+
+body>main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f2a5;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.details-button {
+  background-color: #424748;
+  border: 2px solid #424748;
+  border-radius: 3px;
+  padding: 7px;
+
+}
+
+.details-link {
+  color: white;
+  text-decoration: none;
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#show-page div:nth-child(even) {
+  font-weight: bold;
 }

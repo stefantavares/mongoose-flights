@@ -8,6 +8,12 @@
   <title>Mongoose Movies</title>
 </head>
 <body>
+  <nav>
+    <img src="https://i.imgur.com/x3KhUUD.png">
+    <a href="/flights/new">ADD FLIGHT</a>
+    <a href="/flights">ALL FLIGHTS</a>
+  </nav>
+  <main>
   <h1>FLIGHT LIST</h1>
   <table>
     <thead>
@@ -21,17 +27,17 @@
     <tbody>
       <!-- Write the line of EJS to iterate over movies using forEach -->
       <% flights.forEach(function(f) { %>
-
         <tr>
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
           <td><%= f.departs %></td>
-
+          <td class="details-button"><a class="details-link" href="/flights/<%= f._id %>">DETAILS</a></td>
         </tr>
         <% }); %>
       <!-- Close the forEach using EJS here -->
     </tbody>
   </table>
+</main>
 </body>
 </html>
