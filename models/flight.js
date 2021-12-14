@@ -8,6 +8,10 @@ const destinationSchema = new Schema({
     },
     arrival: {
         type: Date,
+        default: function () {
+            let d = new Date();
+            return d.setFullYear(d.getFullYear() + 1);
+        }
     }
 });
 

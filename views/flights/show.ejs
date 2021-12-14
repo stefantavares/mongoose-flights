@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Mongoose Movies</title>
+  <title>Mongoose Flights</title>
 </head>
 <body>
   <nav>
@@ -25,9 +25,11 @@
     <div><%= flight.departs %></div>
   </section>
 
-  <br><br><h2>Destinations</h2>
+  <br>
+  <br>
+  <h2>Destinations</h2>
   <form method="POST" action="/flights/<%= flight._id %>/destinations">
-    <label for="">Destination:</label>
+    <label>Destination:</label>
     <select name="airport">
       <option value="AUS">AUS</option>
       <option value="DFW">DFW</option>
@@ -35,12 +37,12 @@
       <option value="LAX">LAX</option>
       <option value="SAN">SAN</option>
     </select>
-    <label for="">Date:</label>
+    <label>Date:</label>
     <input type="date" name="arrival">
-    <!-- <label for="">Time</label>
-    <input type="time" name=""> -->
     <input type="submit" value="Add Destination">
   </form>
+  <br>
+  <br>
 
   <% if (flight.destinations.length) { %>
     <table>
@@ -53,8 +55,8 @@
       <tbody>
         <% flight.destinations.forEach(function(f) { %>
           <tr>
-            <td><%= r.airport %></td>
-            <td><%= r.arrival %></td>
+            <td><%= f.airport %></td>
+            <td><%= f.arrival %></td>
           </tr>
         <% }); %>
       </tbody>
